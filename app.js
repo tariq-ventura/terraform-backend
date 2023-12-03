@@ -13,7 +13,7 @@ const app = express()
 const server = http.createServer(app)
 
 const corsOptions = {
-    origin: 'http://localhost:8081',
+    origin: '${{ secrets.ALLOWED_HOSTS }}',
     methods: 'GET,POST',
     credentials: true,
     optionsSuccessStatus: 204,
@@ -21,7 +21,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
-app.set('port', process.env.PORT)
+app.set('port', ${{ secrets.PORT }})
 
 app.use(morgan('tiny'))
 
