@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const connection = mysql.createPool({
-    connectionLimit: 10,
-    user: process.env.USER,
-    database: process.env.DATABASE,
-    host: '127.0.0.1'
+    user: ${{ secrets.DB_USER }},
+    password: ${{ secrets.DB_PASSWORD }},
+    database: ${{ secrets.DB_NAME }},
+    socketPath: ${{ secrets.INSTANCE_SOCKET }}
 })
 
 module.exports = connection
