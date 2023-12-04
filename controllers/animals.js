@@ -13,7 +13,7 @@ exports.getAnimals = async (req, res) => {
                 res.send(animales)
             } else {
                 res.send('error')
-                console.log(err)
+                console.log(error)
             }
         })
     } catch (error) {
