@@ -3,7 +3,7 @@ const connection = require('../config/connection')
 exports.getAnimals = async (req, res) => {
     const animales = []
     try {
-        connection.query('select * from animales', (error, result) => {
+        connection.query('select * from animals', (error, result) => {
             console.log(result)
             if (result.length) {
                 for (let i = 0; i < result.length; i++) {
@@ -22,7 +22,7 @@ exports.getAnimals = async (req, res) => {
 }
 
 exports.insertAnimals = async (req, res) => {
-    const query = 'INSERT INTO animales (animal) VALUES (?)';
+    const query = 'INSERT INTO animals (animal) VALUES (?)';
     const values = [req.body.animal]
     connection.query(query, values, (error) => {
         if (error) {
