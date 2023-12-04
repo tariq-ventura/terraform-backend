@@ -4,6 +4,7 @@ exports.getAnimals = async (req, res) => {
     const animales = []
     try {
         connection.query('select * from animales', (error, result) => {
+            console.log(result)
             if (result.length) {
                 for (let i = 0; i < result.length; i++) {
                     const element = result[i].animal
@@ -12,6 +13,7 @@ exports.getAnimals = async (req, res) => {
                 res.send(animales)
             } else {
                 res.send('error')
+                console.log(err)
             }
         })
     } catch (error) {
