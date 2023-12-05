@@ -31,15 +31,6 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(express(JSON))
 
-connection.connect(function(err) {
-    if (err) {
-      console.error('error connecting: ' + err.stack);
-      return;
-    }
-   
-    console.log('connected as id ' + connection.threadId);
-  });
-
 app.use('/', require('./router'))
 
 app.use(express.static(path.join(__dirname,'app.js')))
