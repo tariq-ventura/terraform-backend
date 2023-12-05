@@ -55,4 +55,3 @@ exports.testConnection = (req, res) => {
         console.log('connected as id ' + connection.threadId);
     })
 }
-}
