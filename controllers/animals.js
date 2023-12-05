@@ -36,22 +36,5 @@ exports.insertAnimals = async (req, res) => {
 }
 
 exports.testConnection = (req, res) => {
-    var mysql = require('mysql');
-
-    const connection = mysql.createConnection({
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_NAME,
-        host: process.env.DB_PATH
-    })
-
-    connection.connect(function (err) {
-        if (err) {
-            console.error('error connecting: ' + err.stack);
-            res.send('not connected')
-            return;
-        }
-        res.send('connected')
-        console.log('connected as id ' + connection.threadId);
-    })
+    res.send('a')
 }
