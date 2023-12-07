@@ -13,9 +13,9 @@ const app = express()
 const server = http.createServer(app)
 
 const corsOptions = {
-    origin: process.env.ALLOWED_HOSTS,
+    origin: "*",
     methods: 'GET,POST',
-    credentials: true,
+    preflightContinue: false,
     optionsSuccessStatus: 204,
 }
 
