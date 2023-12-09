@@ -21,7 +21,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
-app.set('port', process.env.PORT)
+app.set('port', process.env.PORT) 
 
 app.use(morgan('tiny'))
 
