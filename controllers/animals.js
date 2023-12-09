@@ -5,7 +5,6 @@ exports.getAnimals = async (req, res) => {
     const animales = []
     try {
         connection.query('select * from animals', (error, result) => {
-            console.log(result)
             if (!result) {
                 return res.send('no data')
             }
