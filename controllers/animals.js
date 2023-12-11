@@ -6,7 +6,7 @@ exports.getAnimals = async (req, res) => {
     try {
         connection.query('select * from animals', (error, result) => {
             if (!result) {
-                return res.send('no data')
+                return res.send('no data found')
             }
             if (result.length) {
                 for (let i = 0; i < result.length; i++) {
