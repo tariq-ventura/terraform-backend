@@ -5,10 +5,7 @@ exports.getAnimals = async (req, res) => {
     const animales = []
     try {
         connection.query('select * from animals', (error, result) => {
-            if (!result) {
-                return res.send('no data found')
-            }
-            if (result.length) {
+            if (result && result.length) {
                 for (let i = 0; i < result.length; i++) {
                     const element = result[i].animal
                     animales.push(element)
