@@ -2,22 +2,7 @@ require('dotenv').config()
 const connection = require('../config/connection')
 
 exports.getAnimals = async (req, res) => {
-    const animales = []
-    try {
-        connection.query('select * from animals', (error, result) => {
-            if (!result) {
-                return res.send('error')
-            } else {
-                for (let i = 0; i < result.length; i++) {
-                    const element = result[i].animal
-                    animales.push(element)
-                }
-                res.send(animales)
-            }
-        })
-    } catch (error) {
-        res.send(error)
-    }
+    res.send('hola')
 }
 
 exports.insertAnimals = async (req, res) => {
